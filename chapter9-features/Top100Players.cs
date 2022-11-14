@@ -2,44 +2,59 @@ namespace DefaultNamespace;
 
 public class Top100Players
 {
-    public void ShowBestInTop10()
+    public static void ShowBestInTop10()
     {
-        Console.WriteLine($"Top in top 10: {GetRows()[0].ToString()}");
+        Console.WriteLine($"Top in top 10: {GetTopAfterBirthYear(10, 1988).FirstOrDefault().ToString()}");
     }
     
-    public void ShowLowestInTop10()
+    public static void ShowLowestInTop10()
     {
-        Console.WriteLine($"Lowest in top 10: {GetRows()[9].ToString()}");
+        Console.WriteLine($"Lowest in top 10: {GetTopAfterBirthYear(10, 1988).LastOrDefault().ToString()}");
     }
     
-    public void ShowAverageInTop10()
+    public static void ShowAverageInTop10()
     {
-        Console.WriteLine($"Average in top 10: {GetRows()[4].ToString()}");
+        Console.WriteLine($"Average in top 10: {GetTopAfterBirthYear(10, 1988)[4].ToString()}");
     }
-    
-    private List<ChessPlayer> GetRows()
+
+    public static void ShowsPlayersFromTop100ByCountry(string country)
+    {
+        GetChessPlayersList()
+            .Where(player => player.Country == country)
+            .OrderByDescending(player => player.BYear)
+            .ToList()
+            .ForEach(Console.WriteLine);
+    }
+
+    private static IEnumerable<ChessPlayer> GetChessPlayersList()
     {
         return File.ReadAllText("../../../assets/top100.csv")
             .Split("\n")
             .Skip(1)
-            .Select(l => new ChessPlayer(l.Split(";")))
-            .Where(player => player.BYear > 1988)
-            .OrderBy(player => player.Rank)
+            .Select(l => new ChessPlayer(l.Split(";")));
+    }
+
+    private static List<ChessPlayer> GetTopAfterBirthYear(int numberOfPlayers, int birthYear)
+    {
+        return GetChessPlayersList()
+            // .Where(delegate (ChessPlayer player) { return player.BYear > birthYear; })
+            .Where(player => player.BYear > birthYear)
+            .Take(numberOfPlayers)
             .ToList();
     }
 }
 
 internal class ChessPlayer
 {
-    public int Rank { get; set; }
-    public string Name { get; set; }
-    public string Title { get; set; }
+    private int Rank { get; set; }
+    private string Name { get; set; }
+    private string Title { get; set; }
     public string Country { get; set; }
-    public int Rating { get; set; }
-    public int Games { get; set; }
+    private int Rating { get; set; }
+    private int Games { get; set; }
     public int BYear { get; set; }
     
-    public ChessPlayer(string[] row)
+    public ChessPlayer(IReadOnlyList<string> row)
     {
         Rank = int.Parse(row[0]);
         Name = row[1];
