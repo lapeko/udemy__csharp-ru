@@ -1,35 +1,58 @@
-﻿using System.Threading.Channels;
+﻿
+RunLiterals();
 
-int x = -1;
+void RunLiterals()
+{
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-int y;
-y = 1;
+    int x2 = 0b11;
+    int y2 = 0b1001_1001;
+    
+    Console.WriteLine("x2: " + x2);
+    Console.WriteLine("y2: " + y2);
 
-// Int32 x1 = -1;
-// uint x2 = 32;
+    int x16 = 0xFF;
+    
+    Console.WriteLine("x16: " + x16);
 
-float f = 1.1F;
+    Console.WriteLine(3.1e+2);
+    Console.WriteLine(2e-3);
 
-// next two lines are equivalent
-int x5 = 0;
-int x6 = new int();
+    Console.WriteLine('\x78');
+    Console.WriteLine('\u0420');
+}
 
-// int this case - int a = 1 will be the same
-var a = 1;
+void RunVariables()
+{
+    int x = -1;
 
-// using var there can be convenient
-Dictionary<int, string> dict = new Dictionary<int, string>();
-var dict2 = new Dictionary<int, string>();
+    int y;
+    y = 1;
 
-decimal dc = 3.1m;
+    // Int32 x1 = -1;
+    // uint x2 = 32;
 
-char character = 'a';
-string name = "Vitali";
+    float f = 1.1F;
 
-bool canDrive = true;
+    // next two lines are equivalent
+    int x5 = 0;
+    int x6 = new int();
 
-object obj = 1;
-object obj2 = "123";
-object @object = 'c';
+    // int this case - int a = 1 will be the same
+    var a = 1;
 
-Console.WriteLine();
+    // using var there can be convenient
+    Dictionary<int, string> dict = new Dictionary<int, string>();
+    var dict2 = new Dictionary<int, string>();
+
+    decimal dc = 3.1m;
+
+    char character = 'a';
+    string name = "Vitali";
+
+    bool canDrive = true;
+
+    object obj = 1;
+    object obj2 = "123";
+    object @object = 'c';
+}
