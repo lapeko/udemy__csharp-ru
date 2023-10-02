@@ -1,5 +1,17 @@
 ﻿
-RunLiterals();
+RunOwerflow();
+
+void RunOwerflow()
+{
+    int max = int.MaxValue;
+
+    checked
+    {
+        Console.WriteLine(max);
+        Console.WriteLine(++max);
+        Console.WriteLine(--max);   
+    }
+}
 
 void RunLiterals()
 {
