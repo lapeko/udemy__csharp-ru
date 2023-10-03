@@ -1,7 +1,43 @@
 ﻿
-RunOwerflow();
+using System.Threading.Channels;
 
-void RunOwerflow()
+RunStrings();
+
+void RunStrings()
+{
+    const string word = "abracadabra";
+    var containsA = word.Contains('a');
+
+    Console.WriteLine(containsA);
+
+    var endsWithAbra = word.EndsWith("abra");
+    Console.WriteLine(endsWithAbra);
+    
+    var startWithAbra = word.StartsWith("abraca");
+    Console.WriteLine(startWithAbra);
+
+    var indexOfD = word.IndexOf('d');
+    Console.WriteLine(indexOfD);
+
+    const string space = " ";
+    var isNullOrEmpty = string.IsNullOrEmpty(space);
+    Console.WriteLine("isNullOrEmpty: " + isNullOrEmpty);
+    
+    var isEmptyOrSpace = string.IsNullOrWhiteSpace(space);
+    Console.WriteLine("isEmptyOrSpace: " + isEmptyOrSpace);
+
+    Console.WriteLine(string.Empty == "");
+
+    Console.WriteLine(string.Concat("My ", "name ", "is ", "Vitali"));
+    var myNameString = string.Join(" ", "My", "name", "is", "Vitali");
+    Console.WriteLine(myNameString);
+
+    Console.WriteLine(myNameString.Insert(0, "Hi there! "));
+
+
+}
+
+void RunOverflow()
 {
     int max = int.MaxValue;
 
