@@ -1,4 +1,18 @@
-﻿RunDictionary();
+﻿RunQueue();
+
+void RunQueue()
+{
+    var queue = new Queue<int>(new int[]{1, 2, 3, 4, 5});
+    
+    queue.Enqueue(6);
+    Console.WriteLine("queue.Dequeue(): " + queue.Dequeue());
+    Console.WriteLine("queue.Dequeue(): " + queue.Dequeue());
+    Console.WriteLine("queue.Peek(): " + queue.Peek());
+
+    foreach (var item in queue) Console.WriteLine(item);
+};
+
+
 
 void RunDictionary()
 {
