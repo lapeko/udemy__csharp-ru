@@ -1,4 +1,25 @@
-﻿RunQueue();
+﻿RunStack();
+
+void RunStack()
+{
+    var stack = new Stack<int>();
+    stack.Push(1);
+    stack.Push(2);
+    stack.Push(3);
+    stack.Push(4);
+    stack.Push(5);
+    stack.Push(6);
+
+    Console.WriteLine(stack.Pop());
+    Console.WriteLine(stack.Pop());
+    Console.WriteLine(stack.Peek());
+    Console.WriteLine(stack.Peek());
+
+    foreach (var item in stack)
+        Console.WriteLine(item);
+    
+    Console.WriteLine(stack.Peek());
+}
 
 void RunQueue()
 {
@@ -11,8 +32,6 @@ void RunQueue()
 
     foreach (var item in queue) Console.WriteLine(item);
 };
-
-
 
 void RunDictionary()
 {
