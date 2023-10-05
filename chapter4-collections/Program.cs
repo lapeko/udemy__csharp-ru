@@ -1,4 +1,19 @@
-﻿RunArrays();
+﻿RunDictionary();
+
+void RunDictionary()
+{
+    Dictionary<string, DateTime> dict = new Dictionary<string, DateTime>()
+    {
+        { "Vasya", DateTime.Now.AddYears(-5) },
+        { "Anya", DateTime.Now.AddYears(-6).AddMonths(-3) },
+    };
+
+    foreach (var pair in dict)
+        Console.WriteLine($"{pair.Key} was born at {pair.Value}");
+    
+    // Will throw an error because of the same key
+    // dict.Add("Vasya", DateTime.Now); 
+}
 
 void RunArrays()
 {
