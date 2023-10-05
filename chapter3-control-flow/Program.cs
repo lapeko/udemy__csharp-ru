@@ -1,6 +1,19 @@
-﻿Run10Inputs();
+﻿RunFactorial();
 
-void Run10Inputs()
+void RunFactorial()
+{
+    Console.WriteLine("Enter size of factorial:");
+    var input = Console.ReadLine();
+    if (input == null) return;
+    var size = uint.Parse(input);
+
+    ulong factorial = 1;
+    for (var i = size; i > 0; i--)
+        factorial *= i;
+    Console.WriteLine($"Factorial is: {factorial}");
+}
+
+void RunAverageOf10()
 {
     var size = 0;
     var userNumbers = new int[10];
@@ -29,7 +42,7 @@ void Run10Inputs()
         count++;
     }
         
-    Console.WriteLine($"Average of positive integers that are multiples of three is {(sum / count):F}");
+    Console.WriteLine($"Average of positive integers that are multiples of three is {sum / count:F}");
 }
 
 void RunFibonacci()
