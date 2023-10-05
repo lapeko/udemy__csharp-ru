@@ -1,4 +1,27 @@
-﻿RunFactorial();
+﻿RunAuth();
+
+void RunAuth()
+{
+    const string correctUsername = "johnsilver";
+    const string correctPassword = "qwerty";
+
+    var isLoggedIn = false;
+    for (int attempt = 0; attempt < 3; attempt++)
+    {
+        Console.WriteLine("Enter your login");
+        var username = Console.ReadLine();
+        Console.WriteLine("Enter your password");
+        var password = Console.ReadLine();
+
+        if (username == correctUsername && password == correctPassword)
+        {
+            isLoggedIn = true;
+            break;
+        }
+    }
+
+    Console.WriteLine(isLoggedIn ? "Enter the System" : "The number of available tries have been exceeded");
+}
 
 void RunFactorial()
 {
