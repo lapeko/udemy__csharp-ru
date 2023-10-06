@@ -1,9 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using System.Threading.Channels;
 using chapter5_oop;
 
-Character character = new Character();
-
-Console.WriteLine(character.Health);
-character.Hit(25);
-Console.WriteLine(character.Health);
+var res = RomeNumbers.ConvertToArabic("XIV");
+Console.WriteLine(res);
