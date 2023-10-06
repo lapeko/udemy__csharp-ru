@@ -1,4 +1,38 @@
-﻿RunStack();
+﻿RunExoticArrays();
+
+void RunExoticArrays() {
+    // Multidimensional
+    var multiArr = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
+
+    for (var i = 0; i < multiArr.GetLength(0); i++)
+    {
+        for (var j = 0; j < multiArr.GetLength(1); j++)
+            Console.Write(multiArr[i, j] + " ");
+        Console.WriteLine();
+    }
+        
+    // RunJagged
+    int[][] jaggedArr =
+    {
+        new int[]{ 1, 2 },
+        new int[]{ 3, 4, 5 }
+    };
+    
+    for (var i = 0; i < jaggedArr.Length; i++)
+    {
+        for (var j = 0; j < jaggedArr[i].Length; j++)
+            Console.Write(multiArr[i, j] + " ");
+        Console.WriteLine();
+    }
+
+    var myArr = Array.CreateInstance(typeof(int), new[] { 4 }, new[] { 1 });
+    myArr.SetValue(1, 1);
+    myArr.SetValue(2, 2);
+    myArr.SetValue(2, 3);
+
+    Console.WriteLine($"starting index: {myArr.GetLowerBound(0)}");
+    Console.WriteLine($"ending index: {myArr.GetUpperBound(0)}");
+}
 
 void RunStack()
 {
@@ -74,3 +108,4 @@ void displayArray(int[] arr)
     Console.WriteLine("========================================");
     foreach (var item in arr) Console.WriteLine(item);
 }
+
