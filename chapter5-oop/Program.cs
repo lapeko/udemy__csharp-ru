@@ -90,3 +90,23 @@ using chapter5_oop.obj;
 // {
 //     (num2, num1) = (num1, num2);
 // }
+
+// Nullable
+// Car? car = CallToDbForCar(); 
+//
+// Car? CallToDbForCar()
+// {
+//     return null;
+// }
+//
+// struct Car
+// {
+//     public string Color;
+//     public int MaxSpeed;
+//
+//     public Car(string color, int maxSpeed)
+//     {
+//         Color = color;
+//         MaxSpeed = maxSpeed;
+//     }
+// }
