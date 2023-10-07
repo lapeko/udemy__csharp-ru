@@ -110,3 +110,38 @@ using chapter5_oop.obj;
 //         MaxSpeed = maxSpeed;
 //     }
 // }
+
+// Boxing and unboxing
+double num = 1.1;
+object boxedNum = (object)num;
+// Console.WriteLine((int)boxedNum); // Unable to cast object of type 'System.Double' to type 'System.Int32'.
+Console.WriteLine((int)(double)boxedNum);
+
+Point point = new Point();
+DoSomething(point);
+
+void DoSomething(object obj)
+{
+    var isPoint = obj is Point;
+    if (isPoint)
+    {
+        Console.WriteLine((obj as Point).x);
+        return;
+    }
+    else
+        Console.WriteLine("You should provide Point object");
+
+    var point = obj as Point;
+    if (point == null)
+    {
+        Console.WriteLine("You should provide Point object");
+        return;
+    }
+    Console.WriteLine(point.x);
+}
+
+class Point
+{
+    public int x;
+    public int y;
+}
