@@ -22,3 +22,12 @@ using chapter5_oop.obj;
 // {
 //     return nums.Aggregate((acc, num) => acc + num);
 // }
+
+// Optional params
+// Console.WriteLine(CalculateTriangleArea(10, 10, 1.5, true));
+//
+// double CalculateTriangleArea(double a, double b, double angle, bool isInRadians = false)
+// {
+//     var radians = isInRadians ? angle : angle * Math.PI / 180;
+//     return a * b * Math.Sin(radians) / 2;
+// }
