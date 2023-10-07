@@ -14,3 +14,11 @@ using chapter5_oop.obj;
 // TryDo
 // TryDo.TryDivide(1, 2, out double result);
 // Console.WriteLine(result);
+
+// Rest (params)
+// Console.WriteLine(SumNumbers(1, 2, 3, 4));
+//
+// int SumNumbers(params int[] nums)
+// {
+//     return nums.Aggregate((acc, num) => acc + num);
+// }
