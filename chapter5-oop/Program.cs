@@ -80,3 +80,13 @@ using chapter5_oop.obj;
 //         return $"x: {x}, y: {y}";
 //     }
 // }
+
+// pass primitives by ref
+// int x = 1, y = 2;
+// Swap(ref x, ref y);
+// Console.WriteLine($"x: {x}, y: {y}");
+//
+// void Swap(ref int num1, ref int num2)
+// {
+//     (num2, num1) = (num1, num2);
+// }
