@@ -1,6 +1,6 @@
 namespace chapter5_oop;
 
-class AreaCalculator
+static class AreaCalculator
 {
     public static double CalcForTriangle(double side1, double side2, double side3)
     {

@@ -1,6 +1,6 @@
 namespace chapter5_oop;
 
-class RomeNumbers
+static class RomeNumbers
 {
     private static Dictionary<char, int> _romeNumbers = new Dictionary<char, int>()
     {
