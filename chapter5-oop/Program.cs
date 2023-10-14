@@ -112,36 +112,57 @@ using chapter5_oop.obj;
 // }
 
 // Boxing and unboxing
-double num = 1.1;
-object boxedNum = (object)num;
-// Console.WriteLine((int)boxedNum); // Unable to cast object of type 'System.Double' to type 'System.Int32'.
-Console.WriteLine((int)(double)boxedNum);
+// double num = 1.1;
+// object boxedNum = (object)num;
+// // Console.WriteLine((int)boxedNum); // Unable to cast object of type 'System.Double' to type 'System.Int32'.
+// Console.WriteLine((int)(double)boxedNum);
 
-Point point = new Point();
-DoSomething(point);
+// IS and AS operators
+// Point point = new Point();
+// DoSomething(point);
+//
+// void DoSomething(object obj)
+// {
+//     var isPoint = obj is Point;
+//     if (isPoint)
+//     {
+//         Console.WriteLine((obj as Point).x);
+//         return;
+//     }
+//     else
+//         Console.WriteLine("You should provide Point object");
+//
+//     var point = obj as Point;
+//     if (point == null)
+//     {
+//         Console.WriteLine("You should provide Point object");
+//         return;
+//     }
+//     Console.WriteLine(point.x);
+// }
+//
+// class Point
+// {
+//     public int x;
+//     public int y;
+// }
 
-void DoSomething(object obj)
-{
-    var isPoint = obj is Point;
-    if (isPoint)
-    {
-        Console.WriteLine((obj as Point).x);
-        return;
-    }
-    else
-        Console.WriteLine("You should provide Point object");
-
-    var point = obj as Point;
-    if (point == null)
-    {
-        Console.WriteLine("You should provide Point object");
-        return;
-    }
-    Console.WriteLine(point.x);
-}
-
-class Point
-{
-    public int x;
-    public int y;
-}
+var stack = new MyStack();
+stack.Push(1);
+stack.Push(2);
+stack.Push(3);
+stack.Push(4);
+stack.Push(5);
+Console.WriteLine($"1: {stack.Peek()}"); // logs 5
+Console.WriteLine($"2: {stack.Peek()}"); // logs 5
+Console.WriteLine($"3: {stack.Pop()}"); // logs 5
+Console.WriteLine($"4: {stack.Pop()}"); // logs 4
+Console.WriteLine($"5: {stack.Peek()}"); // logs 3
+stack.Push(4);
+stack.Push(5);
+Console.WriteLine($"6: {stack.Pop()}"); // logs 5
+Console.WriteLine($"7: {stack.Pop()}"); // logs 4
+stack.Pop(); // return 3
+stack.Pop(); // return 2
+Console.WriteLine($"8: {stack.Pop()}"); // logs 1
+// Console.WriteLine($"9: {stack.Peek()}"); // Should throw an error as a stack is empty
