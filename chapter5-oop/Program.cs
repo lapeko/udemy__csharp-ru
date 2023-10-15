@@ -147,7 +147,7 @@ using chapter5_oop.obj;
 //     public int y;
 // }
 
-var stack = new MyStack();
+var stack = new MyStack<int>();
 stack.Push(1);
 stack.Push(2);
 stack.Push(3);

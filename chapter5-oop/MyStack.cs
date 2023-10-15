@@ -1,47 +1,47 @@
 namespace chapter5_oop;
 
-internal interface IMyStack
+internal interface IMyStack<T>
 {
     int Count { get; }
-    void Push(object item);
-    object Pop();
-    object Peek();
+    void Push(T item);
+    T Pop();
+    T Peek();
 }
 
-public class MyStack: IMyStack
+public class MyStack<T>: IMyStack<T>
 {
     public int Count { get; private set; }
-    private object[] _items;
+    private T[] _items;
 
     public MyStack()
     {
-        _items = new object[4];
+        _items = new T[4];
     }
 
     public MyStack(uint capacity)
     {
-        _items = new object[capacity];
+        _items = new T[capacity];
     }
 
-    public void Push(object item)
+    public void Push(T item)
     {
         if (Count == _items.Length)
         {
-            var newStack = new object[_items.Length * 2];
+            var newStack = new T[_items.Length * 2];
             _items.CopyTo(newStack, 0);
             _items = newStack;
         }
         _items[Count++] = item;
     }
 
-    public object Pop()
+    public T Pop()
     {
         if (Count == 0) throw new InvalidOperationException("Stack is empty");
         
         return _items[--Count];
     }
 
-    public object Peek()
+    public T Peek()
     {
         if (Count == 0) throw new InvalidOperationException("Stack is empty");
         
