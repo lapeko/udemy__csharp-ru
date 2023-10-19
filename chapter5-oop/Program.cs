@@ -148,21 +148,28 @@ using chapter5_oop.obj;
 // }
 
 var stack = new MyStack<int>();
+
 stack.Push(1);
 stack.Push(2);
 stack.Push(3);
 stack.Push(4);
 stack.Push(5);
-Console.WriteLine($"1: {stack.Peek()}"); // logs 5
-Console.WriteLine($"2: {stack.Peek()}"); // logs 5
-Console.WriteLine($"3: {stack.Pop()}"); // logs 5
-Console.WriteLine($"4: {stack.Pop()}"); // logs 4
-Console.WriteLine($"5: {stack.Peek()}"); // logs 3
-stack.Push(4);
-stack.Push(5);
-Console.WriteLine($"6: {stack.Pop()}"); // logs 5
-Console.WriteLine($"7: {stack.Pop()}"); // logs 4
-stack.Pop(); // return 3
-stack.Pop(); // return 2
-Console.WriteLine($"8: {stack.Pop()}"); // logs 1
-// Console.WriteLine($"9: {stack.Peek()}"); // Should throw an error as a stack is empty
+
+foreach (var item in stack)
+{
+    Console.WriteLine(item);
+}
+
+// Console.WriteLine($"1: {stack.Peek()}"); // logs 5
+// Console.WriteLine($"2: {stack.Peek()}"); // logs 5
+// Console.WriteLine($"3: {stack.Pop()}"); // logs 5
+// Console.WriteLine($"4: {stack.Pop()}"); // logs 4
+// Console.WriteLine($"5: {stack.Peek()}"); // logs 3
+// stack.Push(4);
+// stack.Push(5);
+// Console.WriteLine($"6: {stack.Pop()}"); // logs 5
+// Console.WriteLine($"7: {stack.Pop()}"); // logs 4
+// stack.Pop(); // return 3
+// stack.Pop(); // return 2
+// Console.WriteLine($"8: {stack.Pop()}"); // logs 1
+// // Console.WriteLine($"9: {stack.Peek()}"); // Should throw an error as a stack is empty
