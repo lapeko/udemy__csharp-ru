@@ -50,11 +50,19 @@ public class MyStack<T>: IMyStack<T>
         return _items[Count - 1];
     }
 
+    // public IEnumerator<T> GetEnumerator()
+    // {
+    //     var copyArr = new T[Count];
+    //     Array.Copy(_items, copyArr, Count);
+    //     return new MyStackEnumerable<T>(copyArr);
+    // }
+    
     public IEnumerator<T> GetEnumerator()
     {
-        var copyArr = new T[Count];
-        Array.Copy(_items, copyArr, Count);
-        return new MyStackEnumerable<T>(copyArr);
+        for (int i = Count - 1; i >= 0; i--)
+        {
+            yield return _items[i];
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
