@@ -17,14 +17,14 @@ static class RomeNumbers
     {
         var calculatedValue = 0;
         var numbers = new int[romeNumber.Length];
-        for (int i = 0; i < romeNumber.Length; i++)
-            if (_romeNumbers.TryGetValue(romeNumber[i], out int value))
+        for (var i = 0; i < romeNumber.Length; i++)
+            if (_romeNumbers.TryGetValue(romeNumber[i], out var value))
                 numbers[i] = value;
             else
                 return calculatedValue;
 
         calculatedValue = numbers[^1];
-        for (int i = numbers.Length - 2; i >= 0; i--)
+        for (var i = numbers.Length - 2; i >= 0; i--)
         {
             var currentNum = numbers[i];
             calculatedValue += currentNum > calculatedValue ? currentNum: -currentNum;
