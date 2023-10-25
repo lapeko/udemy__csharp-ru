@@ -13,3 +13,4 @@ using chapter8_homework;
 // Console.WriteLine(res2.Real);
 // Console.WriteLine(res2.Imaginary);
 
+GuessNumberGame.Run();
