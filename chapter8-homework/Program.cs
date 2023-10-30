@@ -1,5 +1,4 @@
-﻿
-using chapter8_homework;
+﻿using chapter8_homework;
 
 // Complex c1 = new Complex(1, 2);
 // Complex c2 = new Complex(2, 3);
@@ -15,5 +14,8 @@ using chapter8_homework;
 
 // GuessNumberGame.Run();
 
-var game = new TicTacToe();
-game.Run();
+// var game = new TicTacToe();
+// game.Run();
+
+var game = new GallowsGame();
+game.RunGame();
