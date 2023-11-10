@@ -2,8 +2,7 @@ namespace chapter9_features;
 
 internal class Car
 {
-    public event ToHighSpeed? ToHighSpeedDriving;
-    public delegate void ToHighSpeed(int speed);
+    public event Action<int>? ToHighSpeedDriving;
 
     private int _speed = 0;
 
