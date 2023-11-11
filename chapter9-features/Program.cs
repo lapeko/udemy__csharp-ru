@@ -1,4 +1,4 @@
 ﻿using chapter9_features;
 
-var game = new SticksGame();
-game.RunGame();
+var fo = new FileOrderer();
+fo.ReadFiles();
