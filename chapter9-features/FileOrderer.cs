@@ -2,6 +2,17 @@ namespace chapter9_features;
 
 public class FileOrderer
 {
+    public void ReadFilesWithLinq()
+    {
+        var directory = new DirectoryInfo("../../../files-for-exercise");
+
+        directory.GetFiles()
+            .OrderByDescending(fileInfo => fileInfo.Length)
+            .Take(5)
+            .ToList()
+            .ForEach(fileInfo => Console.WriteLine($"File: {fileInfo.Name}. Length: {fileInfo.Length}"));
+    }
+    
     public void ReadFiles()
     {
         var directory = new DirectoryInfo("../../../files-for-exercise");
