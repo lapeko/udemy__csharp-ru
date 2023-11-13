@@ -1,4 +1,6 @@
-﻿using chapter9_features;
+﻿using DefaultNamespace;
 
-var fo = new FileOrderer();
-fo.ReadFilesWithLinq();
+var top100 = new Top100Players();
+top100.ShowBestInTop10();
+top100.ShowAverageInTop10();
+top100.ShowLowestInTop10();
